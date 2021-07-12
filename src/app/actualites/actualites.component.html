@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="p-2 mb-4 bg-light box-shadow-hover rounded text-justify">
+    <h3 class="font-weight-bold text-center text-success rounded ">TOUTES LES ACTUALITES</h3>
+    <div class="row border border-0">
+
+      <div class="col-md-8">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" 
+          placeholder="Recherche par titre" [(ngModel)]="titre"/>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" 
+            type="button" (click)="retrieveActusp()">
+              Search
+            </button>
+            <!-- <p>Affichage du titre : {{titre}}</p> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <pagination-controls previousLabel="Prev" nextLabel="Next" [responsive]="true"
+          (pageChange)="handlePageChange($event)"></pagination-controls>
+      </div>
+
+    </div>
+
+    <div class="row border border-0">
+
+      <div class="col-md border border-0">
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col" *ngFor="
+                                     let actu of actus | paginate : {
+                                        itemsPerPage: pageSize,
+                                        currentPage: page,
+                                        totalItems: count
+                                      }; 
+                               let i = index" [class.active]="i == currentIndex">
+            <div class="card h-100">
+              <img src="http://anat.sn/articles/data/anat_actus/{{ actu.hash }}/{{ actu.image }}" class="card-img-top"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ actu.titre }}</h5>
+                <!-- <p class="card-text">{{ actu.titre }}</p> -->
+              </div>
+
+              <button class="m-3 btn btn-sm bouton btn-outline-success" role="button" routerLink="/actualites/{{ actu.id }}"
+                (click)="setActiveActu(actu, i)">
+                Lire la suite
+              </button>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row border border-0">
+      <div class="col-md-12 border border-0">
+        <!-- <button class="m-3 btn btn-sm btn-light" (click)="removeAllActus()"> -->
+        <button class="m-3 btn btn-sm btn-light">
+          Nombres d'actualités à afficher par page
+        </button>
+
+        <!-- Items per Page: -->
+        <select (change)="handlePageSizeChange($event)">
+          <option *ngFor="let size of pageSizes" [ngValue]="size">
+            {{ size }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

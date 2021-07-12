@@ -1,0 +1,26 @@
+<!-- <p>senegal works!</p> -->
+
+<div class="card">
+    <div class="card-body">
+        <!-- <h5 class="card-title">Sénégal</h5> -->
+        <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="'lesenegal'" routerLinkActive="active"> Sénégal </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="'regions'" routerLinkActive="active"> Les régions </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="'departements'" routerLinkActive="active"> Les départements </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="'communes'" routerLinkActive="active"> Les communes </a>
+              </li>
+          </ul> 
+        <p class="card-text">
+          <router-outlet></router-outlet>
+        </p>
+    </div>
+  </div>
+   
+  

@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="p-4 mb-4 bg-light box-shadow-hover rounded text-justify">
+    <h3 class="font-weight-bold text-center text-success rounded ">UNE ACTUALITE</h3>
+    <div *ngIf="currentActu.id">
+      <h1 class="lh-4">
+        {{currentActu.titre}}
+      </h1>
+      <!-- <fa-icon [icon]="faHome" [styles]="{'stroke': 'red', 'color': '#91e4914d'}"></fa-icon> -->
+      <h5 class="text-muted text-left">
+        <span class="glyphicon glyphicon-time"
+          style="font-size: 21px; color: rgba(0,0,0,0.4); position: relative; top: 4px; margin-right: 5px;"></span>
+        Posté le {{ currentActu.edidate | date:'fullDate' }}
+      </h5>
+      <hr />
+      <div *ngIf="videoFileUrl == 'undefined'">
+        <img src="http://localhost:8090/anatweb/articles/data/anat_actus/{{ currentActu.hash }}/{{ currentActu.image }}"
+          class="card-img-top" alt="IMG">
+      </div>
+
+      <div>
+        <!-- <img src="http://anat.sn/articles/data/anat_55555actus/{{ currentActu.hash }}/{{ currentActu.image }}" class="card-img-top" alt="IMG"> -->
+        <div class="embed-responsive embed-responsive-16by9" *ngIf="videoFileUrl != 'undefined'">
+          <iframe class="embed-responsive-item e2e-iframe-trusted-src " [src]="getSafevideoUlr()" allowfullscreen width="640" height="390">
+          </iframe>
+        </div>
+      </div>
+      <h2 class="text-justify font-family-roboto text-muted text-left">
+        <!-- style="text-align: justify; font-family: 'Roboto'; font-weight: 300; font-size: 3em; color: rgba(0,0,0,0.7); text-align: left"> -->
+        {{currentActu.chapeau}}
+      </h2>
+      <!-- src="http://anat.sn/articles/data/anat_actus/{{ currentActu.hash }}/{{ currentActu.fichier }}"  -->
+          <div class="embed-responsive embed-responsive-1by2 font-family-roboto">
+               <iframe class="embed-responsive-item e2e-iframe-trusted-src" [src]="getSafeHtmlUlr()" allowfullscreen ></iframe>
+          </div>
+
+
+      <div class="clearfix ">
+
+        <span class="font-italic mx-auto">Source: {{currentActu.source}}</span>
+
+        <button class="m-3 btn btn-sm bouton float-right" role="button" [routerLink]="'/actualites'"
+          >Toutes les actualités
+        </button>
+      </div>
+
+    <!--
+      <form>
+        <div class="form-group">
+          <label for="titre">titre</label>
+          <input type="text" class="form-control" id="titre" [(ngModel)]="currentActu.titre" name="titre" />
+        </div>
+        <div class="form-group">
+          <label for="chapeau">Chapeau</label>
+          <input type="text" class="form-control" id="chapeau" [(ngModel)]="currentActu.chapeau" name="chapeau" />
+        </div>
+
+        <div class="form-group">
+          <label><strong>Status:</strong></label>
+          {{ currentActu.status ? "status" : "Pending" }}
+        </div>
+      </form>
+
+      <button class="badge badge-primary mr-2" *ngIf="currentActu.status" (click)="updatestatus(false)">
+        UnPublish
+      </button>
+      <button *ngIf="!currentActu.status" class="badge badge-primary mr-2" (click)="updatestatus(true)">
+        Publish
+      </button>
+
+      <button class="badge badge-danger mr-2" (click)="deleteActu()">
+        Delete
+      </button>
+
+      <button type="submit" class="badge badge-success mb-2" (click)="updateActu()">
+        Update
+      </button>
+      <p>{{ message }}</p>
+    -->
+
+
+    </div>
+
+    <div *ngIf="!currentActu.id">
+      <br />
+      <p>Cannot access this Actu...</p>
+    </div>
+  </div>
+</div>

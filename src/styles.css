@@ -1,1 +1,145 @@
 /* You can add global styles to this file, and also import other style files */
+/* Show it is fixed to the top */
+/* @import '@angular/material/prebuilt-themes/purple-green.css'; already in style.css */
+
+body {
+    min-height: 75rem; /* 1rem = 16px */
+    padding-top: 1.5rem; /*5.5rem*/
+  }
+
+
+html, body { height: 100%; }
+body { margin: 0;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+    font-size: 1em;
+}
+
+.py-5 {
+    padding-top: 3rem!important;
+    margin-top: 1rem!important;
+}
+
+/* .active{
+    background-color: #cccccc;
+    padding: 8px 15px;
+    border-radius: 8px;
+} */
+
+div.card-body a.active{
+    background-color: #e7e979;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+div.card-body {
+    padding: 5px;
+}
+
+h5.card-title {
+    font-weight: bold;
+}
+
+.box-shadow-hover {
+    /* box-shadow: 2px 2px 3px 2px grey; */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+
+}
+.box-shadow-hover:hover {
+    box-shadow: 0 2px 5px 0
+    rgba(0, 0, 0, 0.5), 0
+    2px 10px 0 rgba(0, 0, 0, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+}
+
+.shadow-sm:hover {
+    box-shadow: 0 2px 5px 0
+    rgba(0, 0, 0, 0.5), 0
+    2px 10px 0 rgba(0, 0, 0, 1);
+}
+
+
+
+div div h3 {
+    background-color: #e7e979;
+    color:rgb(3, 68, 3);
+    font-weight: bolder;
+    text-align: center;
+    border-radius: 20px;
+    filter: brightness(1);
+}
+
+div div p {
+
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  line-height: 1.5em;
+}
+
+a.dropdown-item:hover {
+    background-color: grey;
+    color: white;
+}
+a.dropdown-item.active {
+    background-color: rgb(24, 23, 23);
+    color: white;
+}
+
+footer ul.list-unstyled li a{
+    color: #6c757d!important;
+    text-decoration: none;
+}
+footer ul.list-unstyled li a:hover{
+    color: #d4dee7!important;
+    text-decoration: none;
+}
+footer ul.list-unstyled li a:active{
+    color: #949e7d!important;
+    text-decoration: none;
+}
+
+footer div.row h5{
+    color: white;
+    text-decoration: none;
+}
+
+
+/*******BUTTON******/
+.wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bouton {
+    width: 125px;
+    height: 35px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    /* box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+
+    }
+
+  .bouton:hover {
+    background-color: #2eb82e;
+    /* box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4); */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+
+
+
+
+

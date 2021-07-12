@@ -1,0 +1,26 @@
+<!--p>territoires works!</p-->
+
+<div class="card">
+    <div class="card-body">
+        <!-- <h5 class="card-title">Sénégal</h5> -->
+        <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="'dg'" routerLinkActive="active">Le DG</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="'qui'" routerLinkActive="active">Qui sommes-nous?</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="'missions'" routerLinkActive="active">Missions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="'organigramme'" routerLinkActive="active">Organigramme</a>
+              </li>
+          </ul> 
+        <p class="card-text">
+          <router-outlet></router-outlet>
+        </p>
+    </div>
+  </div>
+   
+  

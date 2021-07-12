@@ -1,10 +1,12 @@
 # Anatweb
+# ng serve --o --port 8087
+# server.js listen to 8080 in nodejs-express-sequelize-mysql-actu
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:8087/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 

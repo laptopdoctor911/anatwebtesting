@@ -1,0 +1,31 @@
+<!-- <p>outils works!</p> -->
+
+<div class="card">
+    <div class="card-body">
+        <!-- <h5 class="card-title">Sénégal</h5> -->
+        <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="'amenagement'" routerLinkActive="active">Aménagement du territoire</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="'developpement'" routerLinkActive="active">Développement territorial</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="'cartographie'" routerLinkActive="active">Cartographie & SIG</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="'geodesie'" routerLinkActive="active">Géodésie & Topographie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="'appcarto'" routerLinkActive="active">Application cartographique</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="'ocni'" routerLinkActive="active">Ocni</a>
+            </li>
+          </ul> 
+        <p class="card-text">
+          <router-outlet></router-outlet>
+        </p>
+    </div>
+  </div>
+   

@@ -1,0 +1,43 @@
+<div class="container">
+    <!-- <div class="p-2 mb-4 bg-light box-shadow-hover rounded text-justify">
+        
+        <h3 class="font-weight-bold text-center text-success rounded ">CONTACT</h3>
+        <img class="rounded mx-auto d-block" src="./assets/img/presentation/default-img.jpg" alt="SENEGAL">
+        <br>
+        
+    </div> -->
+
+    <form class="contact" [formGroup]="form" method="post" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput [formControl]="name" required>
+          <mat-error *ngIf="name.invalid">Please enter your name</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Prénom</mat-label>
+            <input matInput [formControl]="prenom" required>
+            <mat-error *ngIf="prenom.invalid">Please enter your prénom</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput [formControl]="email" placeholder="email@example.com" required>
+          <mat-error *ngIf="email.invalid">Please enter a valid email</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Message</mat-label>
+          <textarea matInput [formControl]="message" maxlength="512" rows="7" placeholder="I'm interested in..." required></textarea>
+          <mat-hint align="end"> {{message.value?.length || 0}}/512</mat-hint>
+          <mat-error *ngIf="message.invalid">Please enter a message</mat-error>
+        </mat-form-field>
+        <!-- <button >Submit</button> -->
+        <button mat-raised-button [disabled]="isLoading" class="submit" type="submit">mat-raised-button</button>
+
+        <input [formControl]="honeypot" class="hidden" type="text" />
+        <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
+          <span>{{responseMessage}}</span>
+        </div>
+      </form>
+
+
+</div>
+

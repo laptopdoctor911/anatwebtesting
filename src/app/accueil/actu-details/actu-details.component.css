@@ -1,0 +1,21 @@
+.edit-form {
+    max-width: 400px;
+    margin: auto;
+  }
+
+  h1 {
+    text-align: justify;
+    line-height: 1.5;
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 3em;
+    color: rgba(0,0,0,0.7);
+    text-align: left
+}
+div iframe {
+  width: 100%;
+  height: auto;
+  min-height: 800px;
+  font-family: 'Roboto';
+  font-size: 1.0em;
+}

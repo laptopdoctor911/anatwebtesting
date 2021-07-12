@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row border border-0">
+
+    <div class="col-md border border-0">
+    
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col" *ngFor="let actu of actus; let i = index" 
+                            [class.active]="i == currentIndex">
+
+            <div class="card h-100">
+              <img src="http://anat.sn/articles/data/anat_actus/{{ actu.hash }}/{{ actu.image }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ actu.titre }}</h5>
+                <!-- <p class="card-text">{{ actu.titre }}</p> -->
+              </div>
+
+              <!-- <button type="button" class="m-3 btn btn-sm btn-outline-success" >
+                index = {{ i }} - id = {{ actu.id }}
+              </button> -->
+             
+              <button class="m-3 btn btn-sm bouton" role="button" 
+                        routerLink="/actualites/{{ actu.id }}" (click)="setActiveActu(actu, i)">
+                  Lire la suite
+            </button> 
+              
+            </div>
+          </div>
+        </div>
+
+    </div>
+ 
+  </div>
+
+</div>
