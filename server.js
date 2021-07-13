@@ -1,7 +1,7 @@
 //import modules installed at the previous step. We need them to run Node.js server and send emails
 const express = require("express");
 const cors = require("cors");
-const bodyParser = require("body-parser");
+//const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 
 // create a new Express application instance
@@ -14,7 +14,7 @@ const app = express();
 
 app.use(cors(
     corsOptions
-  )); 
+  ));
 
 //configure the Express middleware to accept CORS requests and parse request body into JSON
 ////app.use(cors({origin: "*" }));
@@ -55,7 +55,7 @@ const sendMail = (user, callback) => {
         pass: "Moustapha--2001"
       }
     });
-  
+
 
   const mailOptions = {
     from: `"<Sender’s name>", "<Sender’s email>"`,
@@ -63,6 +63,6 @@ const sendMail = (user, callback) => {
     subject: "<Message subject>",
     html: "<h1>And here is the place for HTML</h1>"
   };
-  
+
   transporter.sendMail(mailOptions, callback);
 }
